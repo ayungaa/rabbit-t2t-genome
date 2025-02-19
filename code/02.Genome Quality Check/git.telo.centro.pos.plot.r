@@ -1,0 +1,6 @@
+library(RIdeogram)
+chr <- read.table("karyotype.txt", sep = "\t", header = T, stringsAsFactors = F)
+label <- read.table("label.txt", sep = "\t", header = T, stringsAsFactors = F)
+ideogram(karyotype = chr, label = label, label_type = "marker", output = "telo-centro-gap.svg")
+convertSVG("telo-centro-gap.svg", file = "telo-centro-gap", device = "pdf")
+convertSVG("telo-centro-gap.svg", file = "telo-centro-gap", device = "png")
